@@ -1,5 +1,7 @@
 package com.wendelledgar.proyectojson.util;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -16,4 +18,15 @@ public class util {
         String formatedDate = simpleDateFormat.format(currDate);
         return formatedDate + "-list.xml";
     }
+
+    public static boolean isValidUrl(String url) {
+        try {
+            new URL(url);
+            return true;
+        } catch (MalformedURLException e) {
+            System.out.println("Url no válida.");
+            return false;
+        }
+    }
+
 }

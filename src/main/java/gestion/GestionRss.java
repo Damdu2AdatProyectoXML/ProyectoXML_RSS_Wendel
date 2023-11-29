@@ -1,23 +1,34 @@
 package gestion;
 
 import java.io.InputStreamReader;
+import java.util.logging.Logger;
 
 import com.wendelledgar.proyectojson.model.RssFeed;
+import com.wendelledgar.proyectojson.util.util;
 import com.wendelledgar.proyectojson.xml.service.xmlService;
 import com.wendelledgar.proyectojson.xml.service.xmlServiceImpl;
 
 public class GestionRss implements RssService {
+    public static Logger logger = Logger.getLogger(GestionRss.class.getName());
 
     xmlService servicio = new xmlServiceImpl();
 
     public static void mostrarInfoPrimerRss(RssFeed rss) {
-        System.out.println("Datos obtenidos de: " + rss.getChannel().getTitle());
-        System.out.println("Con fecha: " + rss.getChannel().getLastBuildDate());
-        System.out.println("Noticia 1: ");
-        System.out.println("Titulo noticia: " + rss.getChannel().getItems().get(0).getTitle());
-        System.out.println("Link: " + rss.getChannel().getItems().get(0).getLink());
-        System.out.println("Fecha de publicación: " + rss.getChannel().getItems().get(0).getPubDate());
-        System.out.println("Descripción: " + rss.getChannel().getItems().get(0).getDescription());
+        if (rss != null && rss instanceof RssFeed) {
+            System.out.println("Datos obtenidos de: " + rss.getChannel().getTitle());
+            System.out.println("Con fecha: " + rss.getChannel().getLastBuildDate());
+            System.out.println("Noticia 1: ");
+            if (rss.getChannel().getItems() != null) {
+                System.out.println("Titulo noticia: " + rss.getChannel().getItems().get(0).getTitle());
+                System.out.println("Link: " + rss.getChannel().getItems().get(0).getLink());
+                System.out.println("Fecha de publicación: " + rss.getChannel().getItems().get(0).getPubDate());
+                System.out.println("Descripción: " + rss.getChannel().getItems().get(0).getDescription());
+            }else{
+                logger.warning("Lista de items vacía. Puede deberse a una url incorrecta.");
+            }
+        } else {
+            logger.warning("Error. El objeto rss " + rss + " es null o no contiene información válida.");
+        }
     }
 
     /*
@@ -25,7 +36,7 @@ public class GestionRss implements RssService {
      */
     @Override
     public RssFeed getRssFeedFromUrl(String url) {
-        if (!url.isEmpty()) {
+        if (!url.isEmpty() && util.isValidUrl(url)) {
             try {
                 InputStreamReader isr = null;
                 isr = servicio.getIsrFromUrl(url);
