@@ -30,6 +30,12 @@ public final class App {
         RssFeed rss = null;
         rss = servicio.getRssFeedFromXml(xml);
 
-        System.out.println(rss.getChannel().getTitle());
+        System.out.println("Datos obtenidos de: " + rss.getChannel().getTitle());
+        System.out.println("Con fecha: " + rss.getChannel().getLastBuildDate());
+        System.out.println("Noticia 1: ");
+        System.out.println("Titulo noticia: " + rss.getChannel().getItems().get(0).getTitle());
+        System.out.println("Link: " + rss.getChannel().getItems().get(0).getLink());
+        System.out.println("Fecha de publicación: " + rss.getChannel().getItems().get(0).getPubDate());
+        System.out.println("Descripción: " + rss.getChannel().getItems().get(0).getDescription());
     }
 }
