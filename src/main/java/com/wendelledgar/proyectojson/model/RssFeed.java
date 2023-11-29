@@ -1,12 +1,13 @@
 package com.wendelledgar.proyectojson.model;
 
-/*
- * Representa el feed RSS completo.
- * Contiene un objeto Channel que representa la información principal del canal.
- */
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "rss")
 public class RssFeed {
     private Channel channel;
 
+    @XmlElement
     public Channel getChannel() {
         return channel;
     }
@@ -14,10 +15,4 @@ public class RssFeed {
     public void setChannel(Channel channel) {
         this.channel = channel;
     }
-
-    @Override
-    public String toString() {
-        return "RssFeed [channel=" + channel + "]";
-    }
-    
 }

@@ -1,23 +1,19 @@
 package com.wendelledgar.proyectojson.model;
 
+import javax.xml.bind.annotation.*;
 import java.util.List;
 
-/*
- * Representa una entrada individual en el feed RSS.
-*  Contiene información como título, enlace, descripción, 
-*  un objeto Enclosure que representa un archivo adjunto, 
-*  un identificador único (guid), fecha de publicación (pubDate), 
-*  y una lista de categorías.
- */
+@XmlRootElement(name = "item")
 public class Item {
     private String title;
     private String link;
     private String description;
     private Enclosure enclosure;
-    private String guid;
+    private Guid guid;
     private String pubDate;
     private List<String> categories;
 
+    @XmlElement
     public String getTitle() {
         return title;
     }
@@ -26,6 +22,7 @@ public class Item {
         this.title = title;
     }
 
+    @XmlElement
     public String getLink() {
         return link;
     }
@@ -34,6 +31,7 @@ public class Item {
         this.link = link;
     }
 
+    @XmlElement
     public String getDescription() {
         return description;
     }
@@ -42,6 +40,7 @@ public class Item {
         this.description = description;
     }
 
+    @XmlElement
     public Enclosure getEnclosure() {
         return enclosure;
     }
@@ -50,14 +49,16 @@ public class Item {
         this.enclosure = enclosure;
     }
 
-    public String getGuid() {
+    @XmlElement
+    public Guid getGuid() {
         return guid;
     }
 
-    public void setGuid(String guid) {
+    public void setGuid(Guid guid) {
         this.guid = guid;
     }
 
+    @XmlElement
     public String getPubDate() {
         return pubDate;
     }
@@ -66,17 +67,13 @@ public class Item {
         this.pubDate = pubDate;
     }
 
+    @XmlElementWrapper(name = "categories")
+    @XmlElement(name = "category")
     public List<String> getCategories() {
         return categories;
     }
 
     public void setCategories(List<String> categories) {
         this.categories = categories;
-    }
-
-    @Override
-    public String toString() {
-        return "Item [title=" + title + ", link=" + link + ", description=" + description + ", enclosure=" + enclosure
-                + ", guid=" + guid + ", pubDate=" + pubDate + ", categories=" + categories + "]";
     }
 }
