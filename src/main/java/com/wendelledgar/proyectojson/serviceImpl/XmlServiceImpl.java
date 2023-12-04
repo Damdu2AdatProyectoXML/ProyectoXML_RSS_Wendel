@@ -1,4 +1,4 @@
-package com.wendelledgar.proyectojson.xml.service;
+package com.wendelledgar.proyectojson.serviceImpl;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,8 +12,9 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 
 import com.wendelledgar.proyectojson.model.RssFeed;
+import com.wendelledgar.proyectojson.service.XmlService;
 
-public class xmlServiceImpl implements xmlService {
+public class XmlServiceImpl implements XmlService {
 
     @Override
     public InputStreamReader getIsrFromUrl(String url) {

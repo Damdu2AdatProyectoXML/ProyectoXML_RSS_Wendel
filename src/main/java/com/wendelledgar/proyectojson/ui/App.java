@@ -1,8 +1,8 @@
 package com.wendelledgar.proyectojson.ui;
 
 import com.wendelledgar.proyectojson.model.RssFeed;
-import gestion.GestionRss;
-import gestion.RssService;
+import com.wendelledgar.proyectojson.service.RssService;
+import com.wendelledgar.proyectojson.serviceImpl.RssServiceImpl;
 
 /**
  * Hello world!
@@ -21,11 +21,14 @@ public final class App {
 
         String url = "https://www.europapress.es/rss/rss.aspx?buscar=inteligencia-artificial";
 
-        RssService rssService = new GestionRss();
+        RssService rssService = new RssServiceImpl();
 
         RssFeed rss = rssService.getRssFeedFromUrl(url);
 
-        GestionRss.mostrarInfoPrimerRss(rss);
+        RssServiceImpl.mostrarInfoPrimerRss(rss);
 
     }
+
+
+
 }

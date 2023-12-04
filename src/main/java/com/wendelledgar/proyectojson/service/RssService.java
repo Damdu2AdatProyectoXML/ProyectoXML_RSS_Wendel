@@ -1,4 +1,4 @@
-package gestion;
+package com.wendelledgar.proyectojson.service;
 
 import com.wendelledgar.proyectojson.model.RssFeed;
 

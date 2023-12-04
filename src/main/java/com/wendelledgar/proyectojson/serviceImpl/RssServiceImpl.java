@@ -1,17 +1,17 @@
-package gestion;
+package com.wendelledgar.proyectojson.serviceImpl;
 
 import java.io.InputStreamReader;
 import java.util.logging.Logger;
 
 import com.wendelledgar.proyectojson.model.RssFeed;
+import com.wendelledgar.proyectojson.service.RssService;
+import com.wendelledgar.proyectojson.service.XmlService;
 import com.wendelledgar.proyectojson.util.util;
-import com.wendelledgar.proyectojson.xml.service.xmlService;
-import com.wendelledgar.proyectojson.xml.service.xmlServiceImpl;
 
-public class GestionRss implements RssService {
-    public static Logger logger = Logger.getLogger(GestionRss.class.getName());
+public class RssServiceImpl implements RssService {
+    public static Logger logger = Logger.getLogger(RssServiceImpl.class.getName());
 
-    xmlService servicio = new xmlServiceImpl();
+    XmlService servicio = new XmlServiceImpl();
 
     public static void mostrarInfoPrimerRss(RssFeed rss) {
         if (rss != null && rss instanceof RssFeed) {

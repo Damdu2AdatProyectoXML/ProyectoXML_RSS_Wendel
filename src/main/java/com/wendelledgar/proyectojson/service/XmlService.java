@@ -1,10 +1,10 @@
-package com.wendelledgar.proyectojson.xml.service;
+package com.wendelledgar.proyectojson.service;
 
 import java.io.InputStreamReader;
 
 import com.wendelledgar.proyectojson.model.RssFeed;
 
-public interface xmlService {
+public interface XmlService {
 
     // Devuelve un objeto InputStreamReader a partir de la url pasada como parámetro.
     InputStreamReader getIsrFromUrl(String url);
@@ -14,5 +14,5 @@ public interface xmlService {
 
     // Convertir InputStreamReader a String.
     String convertToString(InputStreamReader reader);
-    
+
 }
