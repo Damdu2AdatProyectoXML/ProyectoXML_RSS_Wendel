@@ -2,6 +2,7 @@ package com.wendelledgar.proyectoxml.model;
 
 import javax.xml.bind.annotation.XmlElement;
 
+// Este objeto se utiliza para proporcionar información sobre una imagen asociada con el canal o feed en sí.
 public class Image {
     private String url;
     private String title;

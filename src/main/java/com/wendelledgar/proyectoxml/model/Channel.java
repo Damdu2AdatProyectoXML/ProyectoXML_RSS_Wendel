@@ -3,6 +3,8 @@ package com.wendelledgar.proyectoxml.model;
 import javax.xml.bind.annotation.*;
 import java.util.List;
 
+// Channel es una parte fundamental de la estructura del feed. Contiene información sobre el canal en sí, 
+// que es básicamente el sitio web o fuente de contenido que genera el feed. 
 @XmlRootElement(name = "channel")
 public class Channel {
     private String title;
@@ -12,7 +14,11 @@ public class Channel {
     private String language;
     private String copyright;
     private String lastBuildDate;
+
+    // El elemento ttl se refiere a "time to live" (tiempo de vida) y especifica la duración de tiempo en minutos durante la cual se considera 
+    // que el feed es válido y puede ser almacenado en caché antes de que sea necesario volver a obtener la información más reciente del servidor.
     private int ttl;
+
     private List<Item> items;
 
     @XmlElement

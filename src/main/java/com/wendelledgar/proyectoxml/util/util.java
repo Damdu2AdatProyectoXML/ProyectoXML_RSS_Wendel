@@ -4,10 +4,15 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 import com.sun.istack.logging.Logger;
 
 public class util {
+
+            public static Scanner scanner = new Scanner(System.in);
+
 
     public static Logger logger = Logger.getLogger(util.class);
 
@@ -39,6 +44,16 @@ public class util {
             logger.warning("Url no válida.");
             e.printStackTrace();
             return false;
+        }
+    }
+
+    public static int solicitarOpcion() {
+        try {
+            System.out.print("Ingrese el número de la opción deseada: ");
+            return scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Por favor, ingrese un número válido.");
+            return solicitarOpcion();
         }
     }
 
