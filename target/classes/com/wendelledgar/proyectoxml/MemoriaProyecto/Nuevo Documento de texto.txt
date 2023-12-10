@@ -1,0 +1,74 @@
+Acceso a Datos - Ud2. Acceso a Datos - Ficheros XML PRÁCTICA 1 - Trabajar con ficheros XML
+
+Memoria del Proyecto
+Definición del Contexto de la Aplicación:
+La aplicación se centra en la obtención, procesamiento y almacenamiento de datos provenientes de fuentes RSS en formato XML. Esta elección se basa en la necesidad de acceder a información actualizada de manera estructurada. La aplicación busca proporcionar a los usuarios una interfaz sencilla para interactuar con estas fuentes y gestionar los datos obtenidos.
+
+Conceptos Básicos:
+XML (Extensible Markup Language):
+XML es un lenguaje de marcado que permite la representación estructurada de datos. En este proyecto, se utiliza para almacenar información proveniente de fuentes RSS, aprovechando su capacidad para describir datos jerárquicamente.
+
+RSS (Really Simple Syndication):
+RSS es un formato de fuente web que permite la distribución de contenido actualizado de manera regular. La aplicación accede a fuentes RSS para obtener información variada, como noticias o actualizaciones de blogs.
+
+Librerías de Java:
+El proyecto hace uso de diferentes librerías de Java:
+
+JAXB (Java Architecture for XML Binding): Se utiliza para mapear objetos Java a documentos XML y viceversa. Facilita la manipulación de datos XML de manera eficiente.
+
+DocumentBuilderFactory: Pertenece al paquete javax.xml.parsers y se emplea para obtener instancias de parsers de documentos XML, permitiendo la creación de objetos Document.
+
+Herramientas de Desarrollo:
+Gestión de Tareas con Jira:
+Metodología Scrum: Se optó por la metodología Scrum para la gestión ágil del proyecto. Jira fue la plataforma utilizada para gestionar las tareas, sprints y la comunicación entre el equipo de desarrollo.
+
+******** Captura de pantalla: Interfaz de Jira mostrando la distribución de tareas en un sprint.
+
+Control de Versiones con Git y GitHub:
+Git: La herramienta de control de versiones Git se implementó para realizar un seguimiento eficiente de los cambios en el código fuente. Se crearon ramas específicas para nuevas características y correcciones de errores.
+
+******** Captura de pantalla: Historial de commits en la rama principal de GitHub.
+
+GitHub: La plataforma GitHub se empleó como repositorio remoto, permitiendo la colaboración en el código entre miembros del equipo. Los pull requests facilitaron la revisión de código y la integración de cambios de manera ordenada.
+
+******** Captura de pantalla: Repositorio en GitHub mostrando la estructura del proyecto y los branches.
+
+Proceso de Desarrollo y Planificación:
+Desarrollo:
+Estructura Modular: El proyecto se ha estructurado en módulos para facilitar la comprensión y mantenimiento del código. Las clases se dividen en responsabilidades específicas, como la gestión de datos, la interfaz de usuario y el manejo de XML.
+
+******** Captura de pantalla: Estructura del proyecto en el IDE, destacando la organización modular.
+
+Iteraciones y Revisiones: Se siguió un enfoque iterativo, con revisiones periódicas del código para ajustar y mejorar la funcionalidad. Se estableció un flujo de trabajo flexible para adaptarse a cambios en los requisitos.
+
+******** Captura de pantalla: Sección de código que refleje cambios significativos después de una revisión.
+
+Planificación:
+Definición de Requisitos: Se identificaron y documentaron los requisitos del proyecto, incluyendo la obtención de datos RSS, el almacenamiento en XML y la presentación de información al usuario.
+
+******** Captura de pantalla: Lista de requisitos en el documento de planificación.
+
+Identificación de Problemas Potenciales: Se anticiparon posibles desafíos, como la gestión de errores al procesar fuentes RSS inválidas y la persistencia de datos XML.
+
+Documentación del Código:
+Cada clase y método del código está debidamente documentado para explicar su propósito, parámetros y comportamiento. Los comentarios en línea ofrecen detalles adicionales para entender la lógica detrás de cada bloque de código.
+
+******** Captura de pantalla: Fragmento de código comentado explicando un proceso crítico.
+
+Ejecución del Proyecto y Pruebas:
+Ejecución:
+La aplicación se inicia desde la clase principal App. Un menú interactivo guía al usuario a través de distintas acciones, como la obtención de datos RSS, el guardado en archivos XML y la visualización de información.
+
+******** Captura de pantalla: Interfaz del menú principal de la aplicación en ejecución.
+
+Pruebas:
+Validación de Datos RSS: Se llevaron a cabo pruebas para asegurar que la aplicación maneje correctamente las fuentes RSS válidas e invaliadas, proporcionando mensajes de error significativos en caso de problemas.
+
+******** Captura de pantalla: Resultados de una prueba de obtención de datos RSS.
+
+Persistencia en XML: Se verificó que la aplicación guarde correctamente los datos obtenidos en archivos XML, asegurando la integridad y recuperación exitosa de la información.
+
+******** Captura de pantalla: Archivo XML generado después de la persistencia de datos.
+
+Conclusión:
+El proyecto ofrece una solución eficiente y modular para la gestión de datos provenientes de fuentes RSS. La combinación de tecnologías XML y Java proporciona una plataforma robusta para la obtención y manipulación de información actualizada. La documentación detallada del código facilita el mantenimiento futuro y la comprensión del proyecto.
