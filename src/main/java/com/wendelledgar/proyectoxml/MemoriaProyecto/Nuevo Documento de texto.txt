@@ -72,3 +72,6 @@ Persistencia en XML: Se verificó que la aplicación guarde correctamente los da
 
 Conclusión:
 El proyecto ofrece una solución eficiente y modular para la gestión de datos provenientes de fuentes RSS. La combinación de tecnologías XML y Java proporciona una plataforma robusta para la obtención y manipulación de información actualizada. La documentación detallada del código facilita el mantenimiento futuro y la comprensión del proyecto.
+
+
+En la captura de pantalla anterior, se muestra el código correspondiente al método getRssFeedFromXml. Este método desempeña un papel fundamental en la aplicación, ya que se encarga de convertir una representación XML en formato de cadena a un objeto RssFeed utilizando JAXB (Java Architecture for XML Binding).

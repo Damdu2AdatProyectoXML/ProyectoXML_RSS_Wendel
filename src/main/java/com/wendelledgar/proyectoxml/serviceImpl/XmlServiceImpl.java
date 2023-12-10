@@ -96,7 +96,6 @@ public class XmlServiceImpl implements XmlService {
             logger.info("El objeto es null.");
             return null;
         }
-
     }
 
     /**
