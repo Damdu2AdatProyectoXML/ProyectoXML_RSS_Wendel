@@ -19,17 +19,25 @@ public class XmlServiceImpl implements XmlService {
 
     public static Logger logger = Logger.getLogger(XmlServiceImpl.class);
 
+    /**
+     * Sobrescribe el método de la interfaz para obtener un InputStreamReader a
+     * partir de una URL.
+     * Verifica que la URL no esté vacía; en caso contrario, devuelve null.
+     * 
+     * @param url - La cadena que representa la URL desde la cual se obtendrá el
+     *            InputStreamReader.
+     * 
+     * @return InputStreamReader - El lector de entrada asociado a la URL o null si
+     *         la URL está vacía o no se pudo procesar.
+     *
+     */
     @Override
     public InputStreamReader getIsrFromUrl(String url) {
 
-        /*
-         * Comprobación de que la url no está vacia, en caso contrario
-         * devolvemos null.
-         */
+        // Comprobación de que la url no está vacia, en caso contrario devolvemos null.
         if (!url.isEmpty()) {
             URL direccion = null;
             try {
-                // Definicion de la url con JSON-Strings
                 direccion = new URL(url);
             } catch (Exception e) {
                 logger.warning("Error. No se ha podido convertir el String URL en un objeto URL de Java.");
@@ -49,6 +57,15 @@ public class XmlServiceImpl implements XmlService {
         }
     }
 
+    /**
+     * Convierte una representación XML en formato String a un objeto RssFeed
+     * utilizando JAXB.
+     *
+     * @param xml La cadena XML que se convertirá en un objeto RssFeed.
+     * @return RssFeed El objeto RssFeed obtenido a partir del XML, o null si la
+     *         entrada es nula o no se puede convertir correctamente.
+     * 
+     */
     @Override
     public RssFeed getRssFeedFromXml(String xml) {
         // Comprobación que el objeto no es null
@@ -82,7 +99,15 @@ public class XmlServiceImpl implements XmlService {
 
     }
 
-    // Función para convertir InputStreamReader a String
+    /**
+     * Convierte un objeto InputStreamReader a una cadena de texto.
+     *
+     * @param reader El objeto InputStreamReader que se convertirá en una cadena de
+     *               texto.
+     * @return String con la cadena de texto del contenido del InputStreamReader, o
+     *         null si se produce un error durante la conversión.
+     * 
+     */
     @Override
     public String convertToString(InputStreamReader reader) {
         try (BufferedReader bufferedReader = new BufferedReader(reader)) {

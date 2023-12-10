@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 import com.wendelledgar.proyectoxml.model.Item;
 import com.wendelledgar.proyectoxml.model.RssFeed;
 import com.wendelledgar.proyectoxml.service.XmlService;
-import com.wendelledgar.proyectoxml.util.util;
+import com.wendelledgar.proyectoxml.util.Util;
 
 public class RssServiceImpl {
 
@@ -33,14 +33,15 @@ public class RssServiceImpl {
 
                 System.out.println("Hay " + rss.getChannel().getItems().size() + " noticias en el canal.");
 
-                // Mostrar titulos de las noticias para posteriormente seleccionar una y mostrar informacion mas detallada
+                // Mostrar titulos de las noticias para posteriormente seleccionar una y mostrar
+                // informacion mas detallada
                 muestraTitulosRss(rss);
 
                 System.out.println(
                         "Que noticia deseas ver? pulsa un numero del 1 al " + rss.getChannel().getItems().size());
 
                 // Leemos por teclado el numero
-                int opcion = util.solicitarOpcion() - 1;
+                int opcion = Util.solicitarOpcion() - 1;
 
                 // Verifica si la lista de items no es nula
                 if (rss.getChannel().getItems() != null && opcion >= 0
@@ -57,7 +58,8 @@ public class RssServiceImpl {
                     logger.warning("Error. Numero incorrecto debe ingresar un numero positivo y en el rango correcto.");
                 }
             } else {
-                // Registra una advertencia si el objeto RssFeed es nulo o no es una instancia válida de RssFeed
+                // Registra una advertencia si el objeto RssFeed es nulo o no es una instancia
+                // válida de RssFeed
                 logger.warning("Error. El objeto rss " + rss + " es null o no contiene información válida.");
             }
         } catch (Exception e) {
@@ -100,7 +102,8 @@ public class RssServiceImpl {
      */
     public static void mostrarInfoCompletoRss(RssFeed rss) {
         try {
-            // Verifica si el objeto RssFeed no es nulo y también si es una instancia válida de RssFeed
+            // Verifica si el objeto RssFeed no es nulo y también si es una instancia válida
+            // de RssFeed
             if (rss != null && rss instanceof RssFeed) {
                 // Mostrar título y la fecha del canal
                 System.out.println("Datos obtenidos de: " + rss.getChannel().getTitle());
@@ -124,7 +127,8 @@ public class RssServiceImpl {
                     logger.warning("Lista de items vacía. Puede deberse a una url incorrecta.");
                 }
             } else {
-                // Registra una advertencia si el objeto RssFeed es nulo o no es una instancia válida de RssFeed
+                // Registra una advertencia si el objeto RssFeed es nulo o no es una instancia
+                // válida de RssFeed
                 logger.warning("Error. El RssFeed " + rss + " no puede ser null.");
             }
         } catch (Exception e) {
@@ -144,7 +148,7 @@ public class RssServiceImpl {
      */
     public static RssFeed getRssFeedFromUrl(String url) {
         // Verifico que la URL no esté vacía y sea válida
-        if (!url.isEmpty() && util.isValidUrl(url)) {
+        if (!url.isEmpty() && Util.isValidUrl(url)) {
             try {
                 // Obtengo un InputStreamReader a partir de la URL
                 InputStreamReader isr = servicio.getIsrFromUrl(url);
@@ -156,7 +160,8 @@ public class RssServiceImpl {
                 RssFeed rss = servicio.getRssFeedFromXml(xml);
                 return rss;
             } catch (Exception e) {
-                // Manejo de errores en caso de problemas al convertir el XML en un objeto RssFeed
+                // Manejo de errores en caso de problemas al convertir el XML en un objeto
+                // RssFeed
                 logger.warning("Error. No se ha podido convertir el xml en un objeto RssFeed.");
                 e.printStackTrace();
                 return null;

@@ -8,7 +8,7 @@ import org.w3c.dom.Document;
 
 import com.wendelledgar.proyectoxml.model.RssFeed;
 import com.wendelledgar.proyectoxml.serviceImpl.RssServiceImpl;
-import com.wendelledgar.proyectoxml.util.util;
+import com.wendelledgar.proyectoxml.util.Util;
 import com.wendelledgar.proyectoxml.xml.GestionXML;
 
 public class Menu {
@@ -26,23 +26,23 @@ public class Menu {
     public static int SALIR = 6;
 
     // Nombre del fichero con el que se guardará la información obtenida.
-    public static String nombreFichero = util.getNombreFicheroXml();
+    public static String nombreFichero = Util.getNombreFicheroXml();
 
-    public static void lanzarMenu(){
+    // Método para lanzar y mantener en ejecución el menú
+    public static void lanzarMenu() {
         // Bucle que se ejecuta continuamente hasta que se elige la opción de salida
         while (true) {
-            
+
             // Muestra el menú de opciones al usuario
             mostrarMenu();
 
             // Solicita al usuario que ingrese una opción
-            int opcion = util.solicitarOpcion();
+            int opcion = Util.solicitarOpcion();
 
             // Ejecuta la opción seleccionada por el usuario
             ejecutarOpcion(opcion);
         }
     }
-
 
     // Método para mostrar el menú de opciones
     public static void mostrarMenu() {
@@ -56,7 +56,12 @@ public class Menu {
         System.out.println("6. Salir");
     }
 
-    // Método para ejecutar la opción seleccionada por el usuario
+    /**
+     * Método para ejecutar la opción seleccionada por el usuario, según la opción
+     * pasada como parámetro ejecutamos un trozo de código diferente.
+     * 
+     * @param opcion - entero con la opcion seleccionada
+     */
     public static void ejecutarOpcion(int opcion) {
         switch (opcion) {
             case 1:
@@ -104,7 +109,6 @@ public class Menu {
         // Construir la URL final
         String url = inputUrl.isEmpty() ? urlPorDefecto + palabraPorDefecto : urlPorDefecto + inputUrl;
 
-        // Resto de la lógica para obtener y mostrar datos Rss
         System.out.println();
         System.out.println("Rss guardada en caché.");
 
@@ -113,7 +117,6 @@ public class Menu {
 
     // Método privado para guardar datos Rss en fichero xml
     private static void guardarDatosRssEnFicheroXml() {
-        // Lógica para guardar datos Rss en fichero xml
         System.out.println();
         System.out.println("Guardando fichero xml");
 
@@ -126,7 +129,6 @@ public class Menu {
 
     // Método privado para mostrar noticias de la Rss
     private static void mostrarNoticiasDeRss() {
-        // Lógica para mostrar noticia de la Rss
         System.out.println();
         System.out.println("Mostrar noticia rss");
 
@@ -136,7 +138,6 @@ public class Menu {
 
     // Método privado para leer el xml completo
     private static void leerXmlCompleto() {
-        // Lógica para leer el xml completo
         System.out.println();
 
         File file = new File(nombreFichero);

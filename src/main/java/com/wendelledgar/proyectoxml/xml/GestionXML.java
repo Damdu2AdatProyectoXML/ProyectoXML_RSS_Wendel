@@ -30,6 +30,8 @@ import com.wendelledgar.proyectoxml.model.RssFeed;
 
 public class GestionXML {
 
+    // Se crea una instancia de Logger para la clase GestionXML.
+    // Logger es una clase de registro que proporciona mensajes informativos,
     public static Logger logger = Logger.getLogger(GestionXML.class);
 
     /**
@@ -37,8 +39,9 @@ public class GestionXML {
      * 
      * @param ruta     La ruta del fichero XML.
      * @param document El Document XML que se escribirá en el fichero.
-     * @return true si la operación de escritura se realiza con éxito, false si hay algún error.
-     *         
+     * @return true si la operación de escritura se realiza con éxito, false si hay
+     *         algún error.
+     * 
      */
     public static boolean escribirFicheroXML(String ruta, Document document) {
         // Verificar que la ruta y el Document no sean nulos
@@ -98,17 +101,24 @@ public class GestionXML {
      * Lee el contenido de un archivo XML y lo devuelve como un StringBuilder.
      * 
      * @param xml La ruta del archivo XML a leer.
-     * @return Un StringBuilder que contiene el contenido del archivo XML, o null si hay algún error.
-     *         
+     * @return Un StringBuilder que contiene el contenido del archivo XML, o null si
+     *         hay algún error.
+     * 
      */
     public static StringBuilder leerFicheroXML(String xml) {
         // Inicializa un StringBuilder para almacenar el contenido del archivo XML
         StringBuilder contenidoXML = new StringBuilder();
 
+        // Se utiliza un bloque try-with-resources para abrir y gestionar
+        // automáticamente
+        // un recurso, en este caso, un BufferedReader para leer el contenido del
+        // archivo XML.
         try (BufferedReader br = new BufferedReader(new FileReader(xml))) {
             // Lee cada línea del archivo y la agrega al StringBuilder
             String linea;
             while ((linea = br.readLine()) != null) {
+                // Mientras haya líneas (se comprueba que no sea null), se agrega cada línea al
+                // StringBuilder contenidoXML
                 contenidoXML.append(linea).append("\n");
             }
         } catch (IOException e) {
@@ -123,8 +133,9 @@ public class GestionXML {
     /**
      * Crea y devuelve un Document XML de prueba.
      * 
-     * @return Un objeto Document que representa un documento XML de prueba, o null si hay algún error.
-     *         
+     * @return Un objeto Document que representa un documento XML de prueba, o null
+     *         si hay algún error.
+     * 
      */
     public static Document crearDocumentXmlPrueba() {
         try {

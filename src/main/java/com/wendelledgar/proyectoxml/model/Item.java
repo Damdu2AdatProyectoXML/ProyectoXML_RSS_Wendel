@@ -3,7 +3,6 @@ package com.wendelledgar.proyectoxml.model;
 import javax.xml.bind.annotation.*;
 import java.util.List;
 
-
 // Cada item representa una noticia con su titulo, link, descripcion, etc.
 @XmlRootElement(name = "item")
 public class Item {
@@ -14,7 +13,8 @@ public class Item {
     private Guid guid;
     private String pubDate;
 
-    // categories se utiliza para clasificar o categorizar las entradas individuales del feed en diferentes temas o grupos.
+    // categories se utiliza para clasificar o categorizar las entradas individuales
+    // del feed en diferentes temas o grupos.
     private List<String> categories;
 
     @XmlElement

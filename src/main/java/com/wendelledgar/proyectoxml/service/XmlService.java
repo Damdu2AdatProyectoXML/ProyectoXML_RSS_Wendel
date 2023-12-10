@@ -21,7 +21,8 @@ public interface XmlService {
      * Obtiene un objeto RssFeed a partir de una cadena XML.
      * 
      * @param xml La cadena XML a partir de la cual se construirá el objeto RssFeed.
-     * @return Un objeto RssFeed representando la información del feed, o null si hay algún error.
+     * @return Un objeto RssFeed representando la información del feed, o null si
+     *         hay algún error.
      */
     RssFeed getRssFeedFromXml(String xml);
 
@@ -29,8 +30,8 @@ public interface XmlService {
      * Convierte un objeto InputStreamReader a una cadena de texto.
      * 
      * @param reader El InputStreamReader a convertir.
-     * @return Una cadena de texto representando el contenido del InputStreamReader, o null si hay algún error.
+     * @return Una cadena de texto representando el contenido del InputStreamReader,
+     *         o null si hay algún error.
      */
     String convertToString(InputStreamReader reader);
 }
-

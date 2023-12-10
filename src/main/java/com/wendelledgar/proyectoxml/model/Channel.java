@@ -15,8 +15,10 @@ public class Channel {
     private String copyright;
     private String lastBuildDate;
 
-    // El elemento ttl se refiere a "time to live" (tiempo de vida) y especifica la duración de tiempo en minutos durante la cual se considera 
-    // que el feed es válido y puede ser almacenado en caché antes de que sea necesario volver a obtener la información más reciente del servidor.
+    // El elemento ttl se refiere a "time to live" (tiempo de vida) y especifica la
+    // duración de tiempo en minutos durante la cual se considera
+    // que el feed es válido y puede ser almacenado en caché antes de que sea
+    // necesario volver a obtener la información más reciente del servidor.
     private int ttl;
 
     private List<Item> items;
